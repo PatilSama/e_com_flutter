@@ -1,5 +1,5 @@
 import 'package:e_com_flutter/food_reciept/Views/recipe_on_boarding_screen.dart';
-import 'package:e_com_flutter/footboll_live_score/app_main_screen.dart';
+import 'package:e_com_flutter/footboll_live_score/screens/app_main_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'food_reciept/Views/home_screen_recipe.dart';
