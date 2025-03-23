@@ -97,6 +97,7 @@ flutter:
   assets:
       - assets/food_recipe/
       - assets/football/
+      - assets/food-delivery(foodel)/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
