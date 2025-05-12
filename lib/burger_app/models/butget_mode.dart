@@ -23,7 +23,7 @@ final List<Burger> burgers = [
   Burger(
       name: "Extra beef Burger",
       image:
-          "https://img.freepik.com/free-photo/double-cheeseburger_23-2151950841.jpg?t=st=1742480435~exp=1742484035~hmac=79ecc05b151c2b0b481dfd896dfce84dbb85bc114849d5a106eedf3994868f32&w=740",
+          "https://as2.ftcdn.net/v2/jpg/05/85/29/13/1000_F_585291338_0J8Q8vYbKDCu8yqqwAO8PsQZ4ESP2zd8.webp",
       distance: "5.3 km",
       price: 990,
       rating: 4.8,
@@ -31,7 +31,7 @@ final List<Burger> burgers = [
   Burger(
       name: "Smoked Beef Burger",
       image:
-          "https://img.freepik.com/free-photo/double-cheeseburger_23-2151950841.jpg?t=st=1742480435~exp=1742484035~hmac=79ecc05b151c2b0b481dfd896dfce84dbb85bc114849d5a106eedf3994868f32&w=740",
+          "https://as2.ftcdn.net/v2/jpg/05/85/29/13/1000_F_585291338_0J8Q8vYbKDCu8yqqwAO8PsQZ4ESP2zd8.webp",
       distance: "990 km",
       price: 990,
       rating: 4.8,

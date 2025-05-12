@@ -1,3 +1,4 @@
+import 'package:e_com_flutter/burger_app/screens/burger_items_details.dart';
 import 'package:e_com_flutter/food_reciept/extentions/sized_box_extension.dart';
 import 'package:flutter/material.dart';
 
@@ -117,6 +118,7 @@ class _BurgerMainScreenState extends State<BurgerMainScreen> {
                 ),
                 15.h,
                 Visibility(
+                  visible: selectedIndex == 0 ? true : false,
                   child: SizedBox(
                     width: size.width,
                     height: 270,
@@ -126,8 +128,11 @@ class _BurgerMainScreenState extends State<BurgerMainScreen> {
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
+                        final burger = burgers[index];
                         return GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>BurgerItemsDetails(burger: burger),),);
+                          },
                           child: Padding(
                             padding: EdgeInsets.all(8),
                             child: Container(
@@ -145,7 +150,89 @@ class _BurgerMainScreenState extends State<BurgerMainScreen> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Stack(
-                                children: [],
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+
+                                      });
+                                      burger.isFavorited = !burger.isFavorited;
+                                    },
+                                    child: Align(
+                                      alignment: Alignment.topRight,
+                                      child: Container(
+                                        padding: EdgeInsets.all(6),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(50),
+                                            color: burger.isFavorited
+                                                ? Colors.pink.shade50
+                                                : Colors.grey.shade200),
+                                        child: Icon(
+                                          Icons.favorite,
+                                          color: burger.isFavorited
+                                              ? Colors.red
+                                              : Colors.black26,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Column(
+                                    children: [
+                                      Image.network(
+                                        burger.image,
+                                        height: 120,
+                                      ),
+                                      10.h,
+                                      Text(
+                                        burger.name,
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w700),
+                                      ),
+                                      10.h,
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.star,
+                                            color: Colors.orangeAccent,
+                                            size: 20,
+                                          ),
+                                          Text(
+                                            "${burger.rating} |",
+                                            style: TextStyle(
+                                                color: Colors.grey.shade700,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                          Text(
+                                            burger.distance,
+                                            style: TextStyle(
+                                                color: Colors.grey.shade700,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ],
+                                      ),
+                                      15.h,
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "\$",
+                                            style:
+                                                TextStyle(color: Colors.orange),
+                                          ),
+                                          Text(
+                                            "${burger.price}",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 22),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
                           ),
